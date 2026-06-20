@@ -1,182 +1,236 @@
-# Parking Intelligence System
+#  Parking Intelligence System
 
-An AI-powered Parking Intelligence and Enforcement Analytics platform designed to identify parking-induced congestion hotspots, prioritize violations, and provide actionable insights through an interactive dashboard.
-
-## Overview
-
-Urban areas often suffer from traffic congestion caused by illegal parking, spillover parking near commercial zones, transit hubs, and event locations. This project combines data analytics, machine learning, and visualization to help authorities:
-
-- Detect parking congestion hotspots
-- Prioritize enforcement actions
-- Analyze parking violation trends
-- Generate operational insights
-- Visualize results through a web dashboard
+> AI-powered parking analytics platform for detecting parking-induced congestion, identifying enforcement priorities, and supporting smarter urban traffic management.
 
 ---
 
-## Project Structure
+##  Problem Statement
 
+Illegal parking and spillover parking near commercial zones, metro stations, transit hubs, and event venues often reduce roadway capacity and create severe traffic congestion.
 
+Traditional enforcement methods are largely patrol-based and reactive, making it difficult to identify high-impact violations in real time.
+
+This project leverages data analytics and machine learning to transform parking enforcement from a reactive process into a proactive, data-driven system.
+
+---
+
+##  Objectives
+
+- Detect parking congestion hotspots
+- Analyze parking violation patterns
+- Prioritize enforcement actions using AI
+- Support data-driven decision making
+- Improve traffic flow and road utilization
+- Provide actionable insights through an interactive dashboard
+
+---
+
+##  Key Features
+
+###  Violation Analytics
+- Analyze historical parking violations
+- Identify recurring problem areas
+- Track violation trends over time
+
+###  AI-Based Priority Scoring
+- Assign priority scores to violations
+- Rank locations based on congestion impact
+- Assist enforcement teams in resource allocation
+
+###  Interactive Dashboard
+- Visualize parking hotspots
+- Monitor enforcement metrics
+- Generate operational insights
+
+###  Data Processing Pipeline
+- Automated preprocessing
+- Feature engineering
+- Model training and evaluation
+- Dashboard payload generation
+
+---
+
+##  System Architecture
+
+```text
+Parking Violation Data
+           │
+           ▼
+Data Cleaning & Processing
+           │
+           ▼
+Feature Engineering
+           │
+           ▼
+Machine Learning Model
+           │
+           ▼
+Priority Scoring Engine
+           │
+           ▼
+Dashboard Visualization
+           │
+           ▼
+Actionable Enforcement Insights
+```
+
+---
+
+##  Project Structure
+
+```text
 Flipkart_final/
 │
 ├── config/
-│ └── prototype_config.json
+│   └── prototype_config.json
 │
 ├── dashboard/
-│ ├── app.js
-│ ├── index.html
-│ └── styles.css
+│   ├── index.html
+│   ├── app.js
+│   └── styles.css
 │
 ├── scripts/
-│ ├── build_prototype.py
-│ └── train_priority_model.py
+│   ├── build_prototype.py
+│   └── train_priority_model.py
 │
 ├── src/
-│ └── parking_intel/
-│ ├── init.py
-│ └── pipeline.py
+│   └── parking_intel/
+│       ├── __init__.py
+│       └── pipeline.py
 │
 ├── dashboard_payload.json
 ├── requirements.txt
 └── README.md
-
-
----
-
-## Key Features
-
-### Parking Violation Analytics
-- Aggregates parking violation records
-- Identifies high-frequency violation zones
-- Detects recurring congestion patterns
-
-### Priority Scoring Engine
-- Assigns priority scores to violations
-- Helps enforcement teams focus on critical locations
-- Supports data-driven decision making
-
-### Machine Learning Pipeline
-- Data preprocessing
-- Feature engineering
-- Model training and evaluation
-- Priority prediction generation
-
-### Interactive Dashboard
-- Visual representation of violation trends
-- Hotspot identification
-- Enforcement recommendations
-- Operational monitoring
+```
 
 ---
 
-## Technology Stack
+## 🛠️ Technology Stack
 
-### Backend
-- Python
-
-### Data Processing
-- Pandas
-- NumPy
-
-### Machine Learning
-- Scikit-learn
-
-### Frontend
-- HTML
-- CSS
-- JavaScript
-
-### Configuration
-- JSON-based configuration files
+| Component | Technology |
+|------------|------------|
+| Programming Language | Python |
+| Data Analysis | Pandas, NumPy |
+| Machine Learning | Scikit-Learn |
+| Frontend | HTML, CSS, JavaScript |
+| Configuration | JSON |
 
 ---
 
-DEPLOYED AT:-https://dashboard-steel-sigma-43.vercel.app/
-
-## Installation
+## ⚙️ Installation
 
 ### 1. Clone the Repository
 
 ```bash
 git clone <repository-url>
 cd Flipkart_final
-2. Create Virtual Environment
+```
+
+### 2. Create a Virtual Environment
+
+```bash
 python -m venv venv
+```
 
-Activate:
+#### Activate Environment
 
-Windows
+**Windows**
 
+```bash
 venv\Scripts\activate
+```
 
-Linux/Mac
+**Linux / macOS**
 
+```bash
 source venv/bin/activate
-3. Install Dependencies
+```
+
+### 3. Install Dependencies
+
+```bash
 pip install -r requirements.txt
-Running the Project
-Train the Priority Model
+```
+
+---
+
+##  Running the Project
+
+### Train the Model
+
+```bash
 python scripts/train_priority_model.py
-Build the Prototype Dataset
+```
+
+### Generate Dashboard Data
+
+```bash
 python scripts/build_prototype.py
-Run the Dashboard
+```
+
+### Launch Dashboard
 
 Open:
 
+```text
 dashboard/index.html
+```
 
 in your browser.
 
-Data Flow
-Input parking violation data
-Data cleaning and preprocessing
-Feature extraction
-Priority model training
-Score generation
-Dashboard payload creation
-Visualization and decision support
-Use Cases
-Traffic Police
-Target high-impact violations
-Improve enforcement efficiency
-Smart Cities
-Monitor congestion hotspots
-Support urban mobility planning
-Municipal Authorities
-Allocate enforcement resources
-Evaluate policy effectiveness
-Event Management
-Predict parking pressure near venues
-Plan temporary enforcement measures
-Configuration
+---
 
-System parameters can be modified through:
+##  Workflow
 
-config/prototype_config.json
+1. Collect parking violation records
+2. Clean and preprocess data
+3. Generate engineered features
+4. Train priority prediction model
+5. Score violations based on impact
+6. Generate dashboard-ready output
+7. Visualize insights for decision makers
 
-This file controls:
+---
 
-Model parameters
-Threshold values
-Processing settings
-Dashboard configuration
-Future Enhancements
-Real-time violation ingestion
-GIS map integration
-Live camera feeds
-Predictive congestion forecasting
-Automated alert generation
-Mobile enforcement application
-Integration with smart parking sensors
-Expected Impact
+##  Expected Outcomes
 
-The Parking Intelligence System enables authorities to move from reactive enforcement to proactive, data-driven traffic management by identifying congestion-causing parking behaviors before they significantly affect road operations.
+- Faster identification of congestion hotspots
+- Improved enforcement efficiency
+- Better allocation of field resources
+- Reduced traffic disruptions caused by illegal parking
+- Data-driven urban mobility planning
 
+---
 
+##  Use Cases
 
-License
+###  Traffic Police
+- Prioritize high-impact violations
+- Optimize patrol deployment
 
-This project is intended for educational, research, and prototype development purposes.
+###  Smart City Authorities
+- Monitor congestion-prone locations
+- Support traffic planning initiatives
 
+###  Municipal Corporations
+- Evaluate parking policies
+- Improve urban mobility strategies
 
-#
+###  Event Management Teams
+- Predict parking pressure around venues
+- Plan temporary traffic interventions
+
+---
+
+##  Future Enhancements
+
+- Real-time violation ingestion
+- GIS and heatmap integration
+- Live CCTV analytics
+- Congestion prediction models
+- Automated alerts and notifications
+- Mobile application for field officers
+- Smart parking sensor integration
+
+---
+## Deployed at :- https://dashboard-steel-sigma-43.vercel.app/
