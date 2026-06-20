@@ -91,6 +91,8 @@ Flipkart_final/
 
 ---
 
+DEPLOYED AT:-https://dashboard-steel-sigma-43.vercel.app/
+
 ## Installation
 
 ### 1. Clone the Repository
@@ -171,7 +173,10 @@ Expected Impact
 The Parking Intelligence System enables authorities to move from reactive enforcement to proactive, data-driven traffic management by identifying congestion-causing parking behaviors before they significantly affect road operations.
 
 
-DEPLOYED AT:-https://dashboard-steel-sigma-43.vercel.app/
+
 License
 
 This project is intended for educational, research, and prototype development purposes.
+
+
+#
