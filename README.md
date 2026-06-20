@@ -105,7 +105,7 @@ Flipkart_final/
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 | Component | Technology |
 |------------|------------|
@@ -117,7 +117,7 @@ Flipkart_final/
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ### 1. Clone the Repository
 
