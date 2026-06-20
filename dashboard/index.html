@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parking Intelligence Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260618-v3" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <div class="brand-mark">AI</div>
+          <div>
+            <span class="brand-kicker">Gridlock 2.0 Prototype</span>
+            <h1>AI Parking Intelligence</h1>
+            <p id="dateRange">Loading dataset...</p>
+          </div>
+        </div>
+        <div class="action-strip">
+          <button class="icon-button" id="resetButton" type="button" title="Reset filters" aria-label="Reset filters">
+            <i data-lucide="rotate-ccw"></i>
+          </button>
+          <a class="icon-button" href="../reports/prototype_summary.md" title="Open summary report" aria-label="Open summary report">
+            <i data-lucide="file-text"></i>
+          </a>
+        </div>
+      </header>
+
+      <main class="dashboard-grid">
+        <aside class="left-rail">
+          <section class="metric-grid" aria-label="Prototype metrics">
+            <div class="metric-tile">
+              <span>Violations</span>
+              <strong id="metricViolations">-</strong>
+            </div>
+            <div class="metric-tile">
+              <span>Hotspots</span>
+              <strong id="metricHotspots">-</strong>
+            </div>
+            <div class="metric-tile">
+              <span>High Zones</span>
+              <strong id="metricHighZones">-</strong>
+            </div>
+            <div class="metric-tile">
+              <span>Peak Share</span>
+              <strong id="metricPeakShare">-</strong>
+            </div>
+          </section>
+
+          <section class="control-panel" aria-label="Filters">
+            <div class="field">
+              <label for="priorityFilter">Priority</label>
+              <select id="priorityFilter"></select>
+            </div>
+            <div class="field">
+              <label for="stationFilter">Station</label>
+              <select id="stationFilter"></select>
+            </div>
+            <div class="field">
+              <label for="minScoreFilter">Minimum Score</label>
+              <div class="range-row">
+                <input id="minScoreFilter" type="range" min="0" max="100" value="0" step="1" />
+                <output id="minScoreValue" for="minScoreFilter">0</output>
+              </div>
+            </div>
+            <div class="field">
+              <label for="searchFilter">Search</label>
+              <input id="searchFilter" type="search" placeholder="Station, junction, violation" />
+            </div>
+          </section>
+
+          <section class="list-panel" aria-label="Priority queue">
+            <div class="panel-heading">
+              <h2>Priority Queue</h2>
+              <span id="visibleCount">0 zones</span>
+            </div>
+            <div class="hotspot-list" id="hotspotList"></div>
+          </section>
+        </aside>
+
+        <section class="map-panel" aria-label="Hotspot map">
+          <div id="map"></div>
+          <div class="map-legend" aria-label="Map legend">
+            <span><b class="legend-dot high"></b>High watchlist</span>
+            <span><b class="legend-dot scheduled"></b>Scheduled</span>
+            <span><b class="legend-dot monitor"></b>Monitor</span>
+          </div>
+        </section>
+
+        <aside class="right-rail">
+          <section class="detail-panel" id="selectedPanel" aria-label="Selected hotspot">
+            <div class="panel-heading">
+              <h2>Selected Zone</h2>
+              <span id="selectedClass">-</span>
+            </div>
+            <div id="selectedDetails" class="selected-details"></div>
+          </section>
+
+          <section class="analysis-panel" aria-label="Operational summaries">
+            <div class="tabs" role="tablist" aria-label="Summary tabs">
+              <button class="tab active" data-tab="stations" type="button">Stations</button>
+              <button class="tab" data-tab="hours" type="button">Hours</button>
+              <button class="tab" data-tab="violations" type="button">Violations</button>
+            </div>
+            <div class="tab-panel active" id="tab-stations"></div>
+            <div class="tab-panel" id="tab-hours"></div>
+            <div class="tab-panel" id="tab-violations"></div>
+          </section>
+
+          <section class="breakdown-panel" aria-label="Priority breakdown">
+            <div class="panel-heading">
+              <h2>Priority Mix</h2>
+              <span id="generatedAt">-</span>
+            </div>
+            <div id="priorityBreakdown"></div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script src="./app.js?v=20260618-v3"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "raw_csv": "jan to may police violation_anonymized791b166.csv",
+  "city": "Bengaluru",
+  "timezone": "Asia/Kolkata",
+  "coordinate_bounds": {
+    "min_latitude": 12.75,
+    "max_latitude": 13.30,
+    "min_longitude": 77.40,
+    "max_longitude": 77.85
+  },
+  "grid_size_degrees": 0.001,
+  "peak_hours": [7, 8, 9, 17, 18, 19, 20],
+  "dashboard_hotspot_limit": 750,
+  "priority_thresholds": {
+    "immediate_patrol": 80,
+    "high_watchlist": 65,
+    "scheduled_patrol": 50
+  }
+}
